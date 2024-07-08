@@ -1,0 +1,29 @@
+{{context.bill_detail}}
+<form method="post">
+    <p>
+        Full Name :<input type="text" name="billname" id="billname" value='{{context.bill_detail.name}}'/>
+    </p>
+    <p>
+        Address: <textarea rows="5" name="billaddress" id="billaddress" value="{{context.bill_detail.address}}"></textarea>
+    </p>
+    <p>
+        Age :<input type="number" name="billage" id="billage" value="{{context.bill_detail.age}}"/>
+    </p>
+    <p>
+        Phone Number :<input type="tel" name="billmobile" id="billmobile" value="{{context.bill_detail.mobile}}"/>
+    </p>
+    <p>
+        E-mail :<input type="text" name="billemail" id="billemail" value="{{context.bill_detail.email}}"/>
+    </p>
+    <p> 
+        Invoice Number :<input type="text" name="billno" id="billno" value='{{context.bill_detail.billno}}' readonly/>
+    </p>
+    <p> 
+        Invoice Amount :<input type="number" name="billamount" id="billamount" value="{{context.bill_detail.amount}}"/>
+    </p>
+    <p>
+        Bill Date :<input type="date" name="billdate" id="billdate" value="{{context.bill_detail.date}}"/>
+    </p>
+    <button>Submit</button>
+    <button>Reset</button>
+</form>

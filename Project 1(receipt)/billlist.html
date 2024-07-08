@@ -1,0 +1,50 @@
+
+<table>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td{
+            text-align: left;
+        }
+        th{
+            text-align: center;
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+
+    <center>
+    <h2> Customer Bill Details </h2>
+    </center>
+
+    <tr> 
+        <th>Full Name</th>
+        <th>Address</th>
+        <th>Age</th>
+        <th>Phone Number</th>
+        <th>E-mail</th>
+        <th>Invoice Number</th>
+        <th>Bill Amount</th>
+        <th>Bill Date</th>
+        <th>Options</th>
+    </tr>
+    {% for bill in context.bill_list %}
+    <tr>
+        <td>{{bill.name}}</td>
+        <td>{{bill.address}}</td>
+        <td>{{bill.age}}</td>
+        <td>{{bill.mobile}}</td>
+        <td>{{bill.email}}</td>
+        <td>{{bill.billno}}</td>
+        <td>{{bill.amount}}</td>
+        <td>{{bill.date}}</td>
+        <td>
+            <a href="/delete/{{bill}.name}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table> 

@@ -1,0 +1,133 @@
+<p hidden>{{context.bill_list}}</p>
+<!DOCTYPE html>
+<html Lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XY Ltd.,</title>
+    <!-- <link rel="stylesheet" href="D:\Python session\Flask\templates\master\bstyle.css"> -->
+</html>
+
+<style>
+    nav{
+        background-color: black;
+        color: aliceblue;
+        padding: 15px;
+        margin: 20px 0px 5px 0px;
+    }
+    h2,li,ul{
+        display: inline;
+    }
+    ul{
+        margin-left: 50%;
+    }
+    li{
+        color: gray;
+        cursor: pointer;
+    }
+    li:hover{
+        color: white;
+    }
+    form{
+        background-color: lightgray;
+    }
+    td{
+        font: 15px Arial;
+        padding: 15px;
+        margin: 5px;
+    }
+    input[type=address] {
+        width: 215%;
+        height: 15%;
+    }
+    input[type=mail] {
+        width: 150%;
+    }
+    input[type=submit], input[type=reset] {
+        background-color: gray;
+        padding: 10px 15px;
+        margin: 10px 0;
+        width: 20%;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <nav>
+            <h2>Customer Bill Pay</h2>
+            <ul>
+                <li>Home |</li>
+                <li>Collection of bill |</li>
+                <li>Bill data |</li>
+                <li>About us </li>
+            </ul>
+        </nav>
+    </div>
+    <hr>
+</body>
+<!-- {{context.bill_number}} -->
+<!-- th = table header,tr = table row, td = table data(column) -->
+<form method="post">
+    <center> 
+    <table>
+        <tr>
+            <td><b>Full Name</b></td> 
+            <td><input type="text" name="billname" id="billname" value='{{context.bill_list.name}}' placeholder="First Name"/></td>
+            <td><input type="text" name="billname" id="billname" value='{{context.bill_list.name}}' placeholder="Last Name"/></td>
+        </tr>
+        
+        <tr>
+            <td><b>Address</b></td>
+            <td><input type="address" name="billaddress" id="billaddress" placeholder="Address Line 1">{{context.bill_list.address}}</textarea></td>
+            <tr>
+                <td><b>      </b></td>
+                <td><input type="address" name="billaddress" id="billaddress" placeholder="Address Line 2">{{context.bill_list.address}}</textarea></td>
+            </tr>
+            <tr>
+                <td><b>      </b></td>
+                <td><input type="text" name="billaddress" id="billaddress" placeholder="City" value='{{context.bill_list.address}}'/></td>
+                <td><input type="text" name="billaddress" id="billaddress" placeholder="District" value='{{context.bill_list.address}}'/></td>
+            </tr>
+            <tr>
+                <td><b>     </b></td>
+                <td><input type="number" name="billaddress" id="billaddress" placeholder="Pincode" value='{{context.bill_list.address}}'/></td>
+            </tr>
+        </tr>
+
+        <tr>
+            <td><b>Age</b></td> 
+            <td><input type="number" name="billage" id="billage" value='{{context.bill_list.age}}'/></td>
+        </tr>
+
+        <tr>
+            <td><b>Phone Number</b></td> 
+            <td><input type="tel" name="billmobile" id="billmobile" value='{{context.bill_list.mobile}}'/></td>
+        </tr>
+
+        <tr>
+            <td><b>E-Mail</b></td> 
+            <td><input type="mail" name="billemail" id="billemail" value='{{context.bill_list.email}}'/></td>
+        </tr>
+
+        <tr>
+            <td><b>Invoice Number</b></td> <td>{{context.bill_number}}</td> 
+            <td name="billno" id="billno" value='{{context.bill_list.billno}}'></td>
+        </tr>
+        
+        <tr>
+            <td><b>Invoice Amount</b></td> 
+            <td><input type="number" name="billamount" id="billamount" value="{{context.bill_list.amount}}"/></td>
+        </tr>
+        
+        <tr>
+            <td><b>Bill Date</b></td>
+            <td>
+                <input type="date" name="billdate" id="billdate" value="{{context.bill_list.date}}"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<p style="background-color: white;"> <input type="Submit"> <br>
+<input type="Reset"> </p>
+</center>
